@@ -9,6 +9,7 @@ import EcommerceNavbar from './e-commerce/Navbar'
 import EcommerceFooter from './e-commerce/Footer'
 import Product from './e-commerce/Product'
 import Cart from './e-commerce/Cart'
+import ProductDetails from './e-commerce/ProductDetails'
 
 
 const App = () => {
@@ -44,6 +45,14 @@ const App = () => {
           <>
             <EcommerceNavbar />
             <Cart />
+            <EcommerceFooter/>
+          </>
+        } />
+
+<Route path="/product_details" element={
+          <>
+            <EcommerceNavbar />
+            <ProductDetails />
             <EcommerceFooter/>
           </>
         } />

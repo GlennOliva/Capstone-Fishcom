@@ -229,6 +229,56 @@ const submitSharePost = () => {
           </div>
         </div>
 
+        <div className="post-container">
+          <div className="post-row">
+            <div className="user-profile">
+              <img src={profile_pic} alt="User" />
+              <div>
+                <p>John Nicholson</p>
+                <small>Public <i className="fa fa-caret-down"></i></small>
+              </div>
+              <a href="#"><i className="fa fa-ellipsis-vertical"></i></a>
+            </div>
+          </div>
+
+          <div className="post-text">
+            <p>Lorem ipsum dolor, <span>sit amet consectetur</span> adipisicing elit. Aliquid temporibus repudiandae repellendus consectetur
+              cupiditate alias expedita debitis, delectus maxime a ea distinctio ipsam iure
+              aperiam rerum voluptatum nam nesciunt culpa! <a href="#">#Web Development</a><a href="#">#Youtube Channel</a>
+            </p>
+            <img src="images/feed-image-1.png" alt="Post" className="post-img" />
+          </div>
+
+          <div className="post-row">
+            <div className="activity-icons">
+              <div 
+                className="like-button"
+                onMouseEnter={() => setShowEmojis(true)}
+                onMouseLeave={() => setShowEmojis(false)}
+              >
+                <img id="likeButtonImg" src={selectedEmoji} alt="Like" />
+                {showEmojis && (
+                  <div className="emoji-options">
+                    <img src={like} alt="Haha" onClick={() => changeEmoji(like)} />
+                    <img src={haha} alt="Haha" onClick={() => changeEmoji(haha)} />
+                    <img src={sad} alt="Sad" onClick={() => changeEmoji(sad)} />
+                    <img src={wow} alt="Wow" onClick={() => changeEmoji(wow)} />
+                    <img src={heart} alt="Heart" onClick={() => changeEmoji(heart)} />
+                    <img src={angry} alt="Angry" onClick={() => changeEmoji(angry)} />
+                    <img src={care} alt="Care" onClick={() => changeEmoji(care)} />
+                  </div>
+                )}
+                120
+              </div>
+              <div><img src={comments} alt="Comments" />45</div>
+              <div className="share-button">
+                <img src={share} alt="Share" onClick={() => setShareModalOpen(true)} />
+                20
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Share Post Modal */}
         {isShareModalOpen && (
           <div id="shareModal" className="modal">

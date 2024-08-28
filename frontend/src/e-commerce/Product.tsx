@@ -1,5 +1,8 @@
 import React from 'react';
 import '../css/styles.css';
+import { Link } from 'react-router-dom';
+import product_1 from '../e-commerce/images/betta-blue.png'
+import product_2 from '../e-commerce/images/betta-siamese.png'
 
 const Product = () => {
   return (
@@ -7,7 +10,7 @@ const Product = () => {
       {/* All Products */}
       <section className="section all-products" id="products">
         <div className="top container">
-          <h1>All Products</h1>
+          <h1>All Fish Products</h1>
           <form>
             <select>
               <option value="1">Default Sorting</option>
@@ -22,54 +25,109 @@ const Product = () => {
           </form>
         </div>
         <div className="product-center container">
-          <div className="product-item">
+        <div className="product-item">
             <div className="overlay">
               <a href="productDetails.html" className="product-thumb">
-                <img src="./images/product-7.jpg" alt="" />
+                <img src={product_1} alt="Product 1" />
               </a>
-              <span className="discount">40%</span>
             </div>
             <div className="product-info">
-              <span>MEN'S CLOTHES</span>
-              <a href="productDetails.html">Concepts Solid Pink Men’s Polo</a>
-              <h4>$150</h4>
+              <span>BETTA & ORNAMENTAL FISH</span>
+              <h3>Betta splenders</h3>
+              <span>Glenn's Store</span>
+              <h4>₱700</h4>
             </div>
             <ul className="icons">
-              <li>
-                <i className="bx bx-heart"></i>
-              </li>
-              <li>
-                <i className="bx bx-search"></i>
-              </li>
-              <li>
-                <i className="bx bx-cart"></i>
-              </li>
+            <li>
+    <Link to="/product_details">
+      <i className="bx bx-show"></i>
+    </Link>
+  </li>
+  <li>
+    <Link to="/cart">
+      <i className="bx bx-cart"></i>
+    </Link>
+  </li>
             </ul>
           </div>
 
-          {/* Repeat this block for other products */}
+
           <div className="product-item">
             <div className="overlay">
-              <a href="" className="product-thumb">
-                <img src="./images/product-2.jpg" alt="" />
+              <a href="productDetails.html" className="product-thumb">
+                <img src={product_2} alt="Product 1" />
               </a>
-              <span className="discount">40%</span>
             </div>
             <div className="product-info">
-              <span>MEN'S CLOTHES</span>
-              <a href="">Concepts Solid Pink Men’s Polo</a>
-              <h4>$150</h4>
+              <span>BETTA & ORNAMENTAL FISH</span>
+              <h3>Betta splenders</h3>
+              <span>Glenn's Store</span>
+              <h4>₱700</h4>
             </div>
             <ul className="icons">
-              <li>
-                <i className="bx bx-heart"></i>
-              </li>
-              <li>
-                <i className="bx bx-search"></i>
-              </li>
-              <li>
-                <i className="bx bx-cart"></i>
-              </li>
+            <li>
+    <Link to="/product_details">
+      <i className="bx bx-show"></i>
+    </Link>
+  </li>
+  <li>
+    <Link to="/cart">
+      <i className="bx bx-cart"></i>
+    </Link>
+  </li>
+            </ul>
+          </div>
+
+          <div className="product-item">
+            <div className="overlay">
+              <a href="productDetails.html" className="product-thumb">
+                <img src={product_1} alt="Product 1" />
+              </a>
+            </div>
+            <div className="product-info">
+              <span>BETTA & ORNAMENTAL FISH</span>
+              <h3>Betta splenders</h3>
+              <span>Glenn's Store</span>
+              <h4>₱700</h4>
+            </div>
+            <ul className="icons">
+            <li>
+    <Link to="/product_details">
+      <i className="bx bx-show"></i>
+    </Link>
+  </li>
+  <li>
+    <Link to="/cart">
+      <i className="bx bx-cart"></i>
+    </Link>
+  </li>
+            </ul>
+          </div>
+
+
+          <div className="product-item">
+            <div className="overlay">
+              <a href="productDetails.html" className="product-thumb">
+                <img src={product_2} alt="Product 1" />
+              </a>
+            </div>
+            <div className="product-info">
+              <span>BETTA & ORNAMENTAL FISH</span>
+              <h3>Betta splenders</h3>
+              <span>Glenn's Store</span>
+              <h4>₱700</h4>
+            </div>
+            <ul className="icons">
+            <li>
+    <Link to="/product_details">
+      <i className="bx bx-show"></i>
+    </Link>
+  </li>
+  <li>
+    <Link to="/cart">
+      <i className="bx bx-cart"></i>
+    </Link>
+  </li>
             </ul>
           </div>
 

@@ -13,18 +13,18 @@ const Footer = () => {
           <a href="#">Shipping Guide</a>
         </div>
         <div className="col d-flex">
-          <h4>USEFUL LINK</h4>
-          <a href="#">Online Store</a>
-          <a href="#">Customer Services</a>
-          <a href="#">Promotion</a>
-          <a href="#">Top Brands</a>
+          <h4>SHOP DETAILS</h4>
+          <a href="#">Fishcommerce</a>
+          <a href="#">Click here to become a seller</a>
         </div>
         <div className="col d-flex">
-          <span><i className='bx bxl-facebook-square'></i></span>
-          <span><i className='bx bxl-instagram-alt'></i></span>
-          <span><i className='bx bxl-github'></i></span>
-          <span><i className='bx bxl-twitter'></i></span>
-          <span><i className='bx bxl-pinterest'></i></span>
+        <h4>CLIENTS</h4>
+          <a href="#">Petworld</a>
+          <a href="#">Fishville</a>
+        </div>
+
+        <div className="col d-flex">
+      
         </div>
       </div>
     </footer>

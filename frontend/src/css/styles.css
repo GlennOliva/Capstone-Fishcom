@@ -5,7 +5,7 @@
 :root {
   --white: #fff;
   --black: #222;
-  --green: #6cbe02;
+  --green: #1876F2;
   --grey1: #f0f0f0;
   --grey2: #e9d7d3;
 }
@@ -63,6 +63,7 @@ Header
   position: relative;
   min-height: 1vh;
   overflow-x: hidden;
+  
 }
 
 .top-nav {
@@ -87,10 +88,10 @@ Navigation
 =================
 */
 .navigation {
-  height: 6rem;
+  height: 7rem;
   line-height: 6rem;
   background-color: #1876F2;
-  margin-bottom: 3%;
+  margin-bottom: 6%;
 }
 
 .nav-center {
@@ -111,13 +112,13 @@ Navigation
 }
 
 .nav-center .nav-link:hover {
-  color: var(--green);
+  color: var(--white);
 }
 
 .nav-center .hamburger {
   display: none;
   font-size: 2.3rem;
-  color: var(--black);
+  color: var(--white);
   cursor: pointer;
 }
 
@@ -127,7 +128,7 @@ Navigation
   cursor: pointer;
   font-size: 2.5rem;
   padding: 0 1rem;
-  color: #555;
+  color: #000;
   position: relative;
 }
 
@@ -186,11 +187,13 @@ Navigation
   }
 
   .icons {
-    display: none;
+    display: flex;
+    margin-top: 1rem; /* Adjust margin as needed */
   }
 
   .nav-list .icons {
     display: flex;
+    margin-top: 1rem; /* Adjust margin as needed */
   }
 
   .top-nav ul {
@@ -203,6 +206,40 @@ Navigation
   }
 }
 
+/* Popup Styling */
+.user-icon {
+  cursor: pointer;
+  position: relative;
+}
+
+.user-popup {
+  position: fixed;
+  right: 120px; /* Adjust as necessary */
+  top: 50px;
+  background-color: white;
+  max-width: 250px;
+  padding: 7px;
+  border-radius: 8px;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+  height: 25vh;
+}
+
+.user-popup p {
+  margin: 0;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.popup-link {
+  display: block;
+  text-decoration: none;
+  color: black;
+  font-size: 12px;
+}
+
+.popup-link:hover {
+  color: #007bff;
+}
 /* 
 =================
 Hero Area
@@ -211,11 +248,13 @@ Hero Area
 
 .hero,
 .hero .glide__slides {
-  background-color: var(--grey2);
+  background-color: var(--green);
   position: relative;
-  height: calc(90vh - 6rem);
+  height: calc(80vh - 6rem);
   margin: 0 4rem;
-  overflow: hidden;
+  position: relative;
+  overflow: visible; /* Ensure the popup can escape the hero boundaries */
+  margin-top: 4.5%;
 }
 
 .hero .center {
@@ -224,15 +263,7 @@ Hero Area
   justify-content: center;
   position: relative;
   height: 100%;
-  padding-top: 3rem;
-}
-
-.hero .left {
-  position: absolute;
-  top: 0%;
-  left: 25rem;
-  opacity: 0;
-  transition: all 1000ms ease-in-out;
+  padding-top: 2.5rem;
 }
 
 .hero .left h1 {
@@ -250,8 +281,8 @@ Hero Area
   padding: 1rem 3rem;
   font-size: 1.6rem;
   margin-top: 1rem;
-  background-color: var(--green);
-  color: white;
+  background-color: var(--grey1);
+  color: black;
 }
 
 .hero .right {
@@ -261,12 +292,6 @@ Hero Area
   text-align: center;
 }
 
-.hero .right img {
-  position: absolute;
-  width: 55rem;
-  opacity: 0;
-  transition: all 1000ms ease-in-out;
-}
 
 .center .right img.img1 {
   width: 85%;
@@ -296,11 +321,26 @@ Hero Media Query
 ======================
 */
 @media only screen and (max-width: 1500px) {
+  .hero,
+.hero .glide__slides {
+    margin-top: 8%;
+  }
+  .user-popup {
+    height: 21vh;
+  }
   .hero .left {
     left: 0;
   }
 }
+
 @media only screen and (max-width: 999px) {
+  .hero,
+  .hero .glide__slides {
+      margin-top: 16%;
+    }
+    .user-popup {
+      height: 20vh;
+    }
   .glide__slide--active .left {
     top: 15%;
   }
@@ -314,31 +354,102 @@ Hero Media Query
   }
 }
 
-@media only screen and (max-width: 567px) {
+/* Media queries for responsiveness */
+
+/* Adjustments for screens 1500px and smaller */
+@media only screen and (max-width: 1500px) {
+  .hero,
+  .hero .glide__slides {
+    margin-top: 9%;
+  }
+  
+  .hero .left {
+    left: 0;
+  }
+
+  .user-popup {
+    height: 27vh;
+  }
+}
+
+/* Adjustments for screens 999px and smaller */
+@media only screen and (max-width: 999px) {
+  .hero,
+  .hero .glide__slides {
+    margin-top: 16%;
+    padding: 0 2rem;
+  }
+  
+  .glide__slide--active .left {
+    top: 15%;
+  }
+
   .center .right img.img1 {
-    width: 30rem;
+    width: 90%;
+    right: -20%;
   }
 
   .center .right img.img2 {
-    width: 33rem;
+    width: 100%;
+    right: -25%;
   }
 
+  .user-popup {
+    height: 20vh;
+ 
+  }
+}
+
+/* Adjustments for screens 567px and smaller */
+@media only screen and (max-width: 567px) {
   .hero,
   .hero .glide__slides {
+    margin-top: 40%;
     margin: 0;
-    padding: 0 3rem;
+    padding: 0 1.5rem;
+    height: auto;
+  }
+  
+  .glide__slide--active .left {
+    top: 10%;
+  }
+
+  .center .right img.img1 {
+    width: 80%;
+    right: -10%;
+    bottom: -20%;
+  }
+
+  .center .right img.img2 {
+    width: 80%;
+    right: -15%;
+    bottom: -15%;
   }
 
   .hero .left h1 {
     font-size: 3rem;
   }
 
-  .hero .left span {
-    font-size: 1.4rem;
-  }
   .hero .left p {
     font-size: 1.5rem;
-    width: 80%;
+    width: 100%;
+  }
+
+  .hero .left .hero-btn {
+    font-size: 1.4rem;
+  }
+
+  .user-popup {
+    position: absolute;
+    right: 2px; /* Adjust as necessary */
+    top: 60px;
+    background-color: white;
+    max-width: 250px;
+    padding: 7px;
+    border-radius: 8px;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+    height: 28vh;
+    
   }
 }
 
@@ -349,6 +460,7 @@ Hero Media Query
 }
 
 .cat-center {
+  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -371,11 +483,13 @@ Hero Media Query
 }
 
 .cat-center .cat img {
-  width: 36.5rem;
+  width: 30rem;
   height: 100%;
   margin: auto;
   object-fit: cover;
   transition: all 2s ease;
+  border: #000 1px solid;
+  padding: 12px;
 }
 
 .cat-center .cat:hover img {
@@ -394,6 +508,7 @@ Hero Media Query
   text-align: center;
   font-size: 2rem;
   font-weight: 500;
+  margin: 12px;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -1238,7 +1353,8 @@ th:last-child {
 }
 
 .checkout:hover {
-  background-color: darkgreen;
+  background-color: #1876F2;
+  text-decoration: none;
 }
 
 

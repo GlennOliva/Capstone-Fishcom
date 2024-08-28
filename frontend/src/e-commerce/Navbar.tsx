@@ -1,11 +1,16 @@
 import '../css/styles.css'; // Import your CSS for styling
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { Link } from 'react-router-dom';
+import logo from '../images/logo1.png'
 const Navbar: React.FC = () => {
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
+
+  const togglePopup = () => {
+    setIsPopupVisible(!isPopupVisible);
+  };
   useEffect(() => {
-    // Function to initialize Glide.js
-    
+
 
     // Handle hamburger menu
     const hamburger = document.querySelector(".hamburger") as HTMLDivElement | null;
@@ -52,18 +57,18 @@ const Navbar: React.FC = () => {
     <header className="header" id="header">
       <div className="navigation">
         <div className="nav-center container d-flex">
-          <a href="/" className="logo"><h1>FishCommerce</h1></a>
+          <img src={logo} className="logo" alt="logo" />
 
           <ul className="nav-list d-flex">
             <li className="nav-item">
-              <a href="/ecommerce" className="nav-link">Home</a>
+              <Link to="/ecommerce" className="nav-link">Home</Link>
             </li>
             <li className="nav-item">
-              <a href="/product" className="nav-link">Shop</a>
+              <Link to="/product" className="nav-link">Shop</Link>
             </li>
             <li className="nav-item">
-  <Link to="/" className="nav-link">Social</Link>
-</li>
+              <Link to="/" className="nav-link">Social</Link>
+            </li>
           </ul>
 
           <div className="icons d-flex">
@@ -71,12 +76,20 @@ const Navbar: React.FC = () => {
               <i className="bx bx-search"></i>
             </div>
             <Link to="/cart" className="icon">
-  <i className="bx bx-cart"></i>
-  <span className="d-flex">0</span>
-</Link>
-            <div className="icon">
-              <h2 style={{ fontSize: '14px' }}>Welcome, Glenn</h2>
+              <i className="bx bx-cart"></i>
+              <span className="d-flex">0</span>
+            </Link>
+            <div className="icon user-icon" onClick={togglePopup}>
+              <i className="bx bx-user"></i>
             </div>
+
+            {isPopupVisible && (
+              <div className="user-popup">
+                <p>Welcome, Glenn</p>
+                <Link to="/profile" className="popup-link">Profile</Link>
+                <Link to="/logout" className="popup-link">Logout</Link>
+              </div>
+            )}
           </div>
 
           <div className="hamburger">
@@ -84,8 +97,6 @@ const Navbar: React.FC = () => {
           </div>
         </div>
       </div>
-
-   
     </header>
   );
 }
